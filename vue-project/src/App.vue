@@ -57,8 +57,8 @@
   </div>
   </section>
 
-  <div class="popup" v-if="popUp">
-    <p>You did it! 👏</p>
+  <div class="flex justify-center" v-if="popUp">
+    <p class="text-2xl font-bold">You did it! 👏</p>
   </div>
 
 </body>
