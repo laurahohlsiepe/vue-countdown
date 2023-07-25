@@ -57,6 +57,10 @@
   </div>
   </section>
 
+  <div class="popup" v-if="popUp">
+    <p>You did it! 👏</p>
+  </div>
+
 </body>
 </template>
 
@@ -69,9 +73,10 @@ export default {
       thirty: false,
       selectedValue: '',
       hour: 0,
-      minutes: 30,
+      minutes: 0,
       seconds: 0,
       timerInterval: null,
+      popUp: false,
     }
   },
 
@@ -107,6 +112,7 @@ export default {
             this.hour--;
           } else {
             this.stop();
+            this.popUp = true;
           }
         }
       }
@@ -133,6 +139,7 @@ export default {
       this.minutes = 30;
       this.seconds = 0;
       }
+      this.popUp = false;
     },
   }
 }
