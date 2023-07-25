@@ -2,7 +2,7 @@
 <body class="bg-pink-300 font-mono">
   <header>
     <div>
-       <h1 class="text-3xl font-bold text-center pt-12">
+       <h1 class="text-3xl font-bold text-center pt-12 px-12">
           Study Countdown for 15 or 30 min Intervalls 💗
        </h1>
     </div>
@@ -26,7 +26,7 @@
       <span>{{ twoDigitFormat(hour) }}</span>:<span>{{ twoDigitFormat(minutes) }}</span>:<span>{{ twoDigitFormat(seconds) }}</span>
     </div>
 
-    <div class="flex justify-center gap-x-16 mt-10">
+    <div class="flex flex-wrap justify-center gap-x-16 mt-10">
       <div>
       <button class="rounded-full bg-pink-700 text-white text-center w-20 text-sm py-2.5 mr-2 mb-2" @click="start()">Start</button>
     </div>
@@ -44,7 +44,7 @@
       <span>{{ twoDigitFormat(hour) }}</span>:<span>{{ twoDigitFormat(minutes) }}</span>:<span>{{ twoDigitFormat(seconds) }}</span>
     </div>
 
-    <div class="flex justify-center gap-x-16 mt-10">
+    <div class="flex flex-wrap justify-center gap-x-16 mt-10">
       <div>
       <button class="rounded-full bg-pink-700 text-white w-20 text-sm py-2.5 mr-2 mb-2" @click="start()">Start</button>
     </div>
@@ -61,8 +61,6 @@
 </template>
 
 <script>
-import { stringify } from 'postcss';
-
 export default {
   name: 'App',
   data() {
@@ -86,12 +84,10 @@ export default {
         this.hour = 0;
         this.minutes = 15;
         this.seconds = 0;
-        console.log('15')
       } else if (this.selectedValue === 'thirty') {
         this.hour = 0;
         this.minutes = 30;
         this.seconds = 0;        
-        console.log('30')
       }
     },
     twoDigitFormat(value) {
